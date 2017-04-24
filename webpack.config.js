@@ -21,6 +21,14 @@ var config = {
             presets: ['react']
           }
         },
+        
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i, 
+          loader: "file-loader?name=assets/images/[name].[ext]"
+
+        },
+
+
     ],
   }
 };
