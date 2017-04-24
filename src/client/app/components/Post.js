@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 class Post extends React.Component {
   render() {
     return (
+
       <div className="ui card">
         <div className="content">
           <div className="right floated meta">14h</div>
@@ -13,7 +14,7 @@ class Post extends React.Component {
         </div>
         <div className="image">
             <img src={"src/client/app/assets/images/image.png"}></img>
-        
+
         </div>
         <div className="content">
           <span className="right floated">
@@ -30,6 +31,7 @@ class Post extends React.Component {
           </div>
         </div>
       </div>
+
     );
   }
 }
