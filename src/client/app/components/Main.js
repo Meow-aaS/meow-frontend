@@ -5,14 +5,19 @@ import Feed from './Feed.js';
 import Post from './Post.js';
 import { Router, Route ,Switch} from 'react-router'
 import { HashRouter,IndexRoute} from 'react-router-dom'
+import Browse from './Browse.js';
+
 class Main extends React.Component {
   render() {
     return (
       <div>
+      
         <Navbar/>
         <Route exact path = '/feed' component = {Feed} />
 
       </div>
+
+
     );
   }
 }
