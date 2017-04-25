@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
+// import styles from '../assets/css/post.css'
+import '../assets/css/post.css';
+import classname from 'classnames';
 
 class Post extends React.Component {
   render() {
     return (
-      
-      <div className="ui centered card" style = {{width : "100 %"}}>
+      // {classname('ui', 'card', 'centered', styles['ui.card.centered'])}
+      <div className="ui card centered">
         <div className="content">
           <div className="right floated meta">14h</div>
            <img className="ui avatar image" src={"src/client/app/assets/images/elliot.jpg"}></img> Elliot
