@@ -7,11 +7,11 @@ class Feed extends React.Component {
     return (
       <div>
          <Post like =  {2}
-                comment = {3}/>
+                comment = {['the weeknd','bruno mars','damn']}/>
           <Post like =  {2}
-                comment = {3}/>
+                comment = {['the weeknd','bruno mars','damn']}/>
           <Post like =  {2}
-                comment = {3}/>
+                comment = {['the weeknd','bruno mars','damns']}/>
       </div>
 
 
