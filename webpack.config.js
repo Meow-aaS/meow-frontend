@@ -11,6 +11,11 @@ var config = {
     publicPath: "src/client/public/",
     filename: 'bundle.js',
   },
+  devServer:{
+    historyApiFallback:{
+      index: 'index.html'
+    }
+  },
   module: {
     loaders: [
         {
