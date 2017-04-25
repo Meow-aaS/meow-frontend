@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "../assets/css/browse.css";
 
 class Browse extends React.Component{
     render(){
         return(
-          <div className="ui form">
+     <div>
+        <div className= "ui middle aligned center aligned grid">
+            <div id = "container-450"className="column">
+            <div className="ui form">
              <div className="field">
                  <label>Name</label>
                  <input type="text"/>
@@ -22,8 +26,10 @@ class Browse extends React.Component{
                      Post
                    </button>
                </div>
+          </div> 
           </div>
-          
+        </div>   
+    </div>  
 
         );
     }

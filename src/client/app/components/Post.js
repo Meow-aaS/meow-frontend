@@ -12,6 +12,7 @@ class Post extends React.Component {
     return (
 
       // {classname('ui', 'card', 'centered', styles['ui.card.centered'])}
+    <div>
       <div className="ui card centered">
         <div className="content">
           <div className="right floated meta">14h</div>
@@ -23,7 +24,6 @@ class Post extends React.Component {
         </div>
         <div className="content">
           <Like like = {this.props.like} />
-          <div>{this.props.like}</div>
           <i className="comment icon"></i>
           {this.props.comment} comments
        </div>
@@ -34,6 +34,7 @@ class Post extends React.Component {
           </div>
         </div>
 
+      </div>
       </div>
 
 

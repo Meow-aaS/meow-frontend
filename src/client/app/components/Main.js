@@ -11,10 +11,10 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-      
+
         <Navbar/>
         <Route exact path = '/' component = {Feed} />
-
+        <Route path = '/browse' component = {Browse}/>
       </div>
 
 

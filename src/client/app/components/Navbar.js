@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Post from './Post.js';
+import {Link} from 'react-router-dom'
 
 class Navbar extends React.Component {
   render() {
@@ -8,12 +9,13 @@ class Navbar extends React.Component {
       <div>
       <div className="ui attached stackable menu">
   <div className="ui container">
-    <a className="item">
+    <Link to="/"><a className="item">
       <i className="home icon"></i> Home
-    </a>
-    <a className="item">
+    </a></Link>
+   <Link to="/browse"> <a className="item">
       <i className="grid layout icon"></i> Browse
     </a>
+    </Link>
    
   </div>
 </div>
