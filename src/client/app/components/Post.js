@@ -5,8 +5,15 @@ import '../assets/css/post.css';
 import classname from 'classnames';
 
 class Post extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isLike : false
+    };
+  }
   render() {
     return (
+      
       // {classname('ui', 'card', 'centered', styles['ui.card.centered'])}
       <div className="ui card centered">
         <div className="content">
@@ -20,10 +27,10 @@ class Post extends React.Component {
         <div className="content">
           <span className="right floated">
             <i className="heart outline like icon"></i>
-            17 likes
+            {this.props.like} likes
            </span>
           <i className="comment icon"></i>
-          3 comments
+          {this.props.comment} comments
        </div>
         <div className="extra content">
           <div className="ui large transparent left icon input">
@@ -31,9 +38,9 @@ class Post extends React.Component {
             <input type="text" placeholder="Add Comment..."></input>
           </div>
         </div>
-      
+
       </div>
-  
+
 
     );
   }

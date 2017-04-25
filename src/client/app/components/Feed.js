@@ -6,9 +6,12 @@ class Feed extends React.Component {
   render() {
     return (
       <div>
-         <Post/>
-         <Post/>
-         <Post/>
+         <Post like =  {2}
+                comment = {3}/>
+          <Post like =  {2}
+                comment = {3}/>
+          <Post like =  {2}
+                comment = {3}/>
       </div>
 
 
