@@ -27,10 +27,18 @@ class Like extends React.Component {
     }
 
   }
+
+  onLike(){
+
+
+
+  }
+
+  
   render() {
-    console.log(this.state.isLike);
+  
     let classes = classname({'heart floated like icon':this.state.isLike,'heart outline like icon': !this.state.isLike});
-    console.log(classes);
+    
     return (
       <div>
         <span className="right floated">

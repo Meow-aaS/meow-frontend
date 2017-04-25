@@ -14,8 +14,8 @@ class Feed extends React.Component {
        isBottom : false,
        isProgressBar : false,
        isFirstGet : false,
-       postObject : null,
        postData : [],
+       nextPage : null
      
     };
     this.handleScroll = this.handleScroll.bind(this);
@@ -26,9 +26,11 @@ class Feed extends React.Component {
 
     CatFaceHelper.getFeeds()
                  .then(function(response){
+                   console.log(response);
                     this.setState({
-                        postObject : response,
-                        postData : response.data 
+                       
+                        postData : response.data,
+                        nextPage : response.nextPage,
 
                     });
 
@@ -41,6 +43,38 @@ class Feed extends React.Component {
   componentDidMount() {
       window.addEventListener("scroll", this.handleScroll);
   }
+
+  getPagination(nextPage){
+    if(this.state.isProgressBar){
+      return;
+    }
+    this.setState({
+              isProgressBar : true
+           });
+    
+     CatFaceHelper.getNextFeeds(nextPage)
+                 .then(function(response){
+                    let tempFeeds   = this.state.postData;
+                    console.log(response);
+                    console.log("-----------");
+                    let feeds = tempFeeds.concat(response.data);
+                    console.log(feeds);
+                    console.log("-----------");
+                    this.setState({
+                        
+                        postData : feeds,
+                        nextPage : response.nextPage,
+                        isProgressBar : false,
+                        isBottom : false
+
+                    });
+
+                    
+
+                 }.bind(this));
+
+
+  }
   handleScroll() {
     const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
     const body = document.body;
@@ -49,21 +83,32 @@ class Feed extends React.Component {
     const windowBottom = windowHeight + window.pageYOffset;
     if (windowBottom >= docHeight) {
       console.log("bottom" + this.state.post.length);
-        let cache = this.state.post;
-        var delayMillis = 1000; //1 second
 
         this.setState({
-          isBottom : true,
-          post : cache
-         
+          isBottom : true, 
         });
-        if(this.state.isBottom && !this.state.isProgressBar){
-           cache.push(<ProgressBar/>);
-           this.setState({
-              isProgressBar : true
-           });
-        }
-       setTimeout(function() {
+
+        this.getPagination(this.state.nextPage);
+
+        
+        
+        
+        
+        // let cache = this.state.post;
+        // var delayMillis = 1000; //1 second
+
+        // this.setState({
+        //   isBottom : true,
+        //   // post : cache
+         
+        // });
+        // if(this.state.isBottom && !this.state.isProgressBar){
+        //    cache.push(<ProgressBar/>);
+        //    this.setState({
+        //       isProgressBar : true
+        //    });
+        // }
+       /*setTimeout(function() {
   //your code to be executed after 1 second
           console.log(cache)
 
@@ -76,7 +121,7 @@ class Feed extends React.Component {
                     isProgressBar: false
 
                  });
-        }.bind(this), delayMillis);
+        }.bind(this), delayMillis);*/
 
      } else {
       console.log("not bottom");
@@ -89,8 +134,14 @@ class Feed extends React.Component {
     return (
       <div> 
           {this.state.postData.map(data =>(
-              <Post key = {data.postID} like = {data.liked_count} comment = {data.comments} ownername = {data.owner_name} />
-          ))}
+              <Post key = {data.postID} like = {data.liked_count} comment = {data.comments} ownername = {data.owner_name} 
+              time={data.created_at} imageUrl = {data.image_url} caption ={data.caption}/>
+          ))} 
+          
+          {(this.state.isProgressBar&&this.state.isBottom&& (this.state.nextPage!=0)) ? <ProgressBar/> : null }
+
+
+
       </div>
 
 

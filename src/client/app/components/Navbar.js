@@ -9,7 +9,7 @@ class Navbar extends React.Component {
       <div>
       <div className="ui attached stackable menu">
   <div className="ui container">
-    <Link to="/" className="item">
+    <Link to="/"  className="item">
       <i className="home icon"></i> Home
     </Link>
    <Link to="/browse" className="item"> 
