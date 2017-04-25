@@ -4,11 +4,8 @@ import ReactDOM from 'react-dom';
 class ProgressBar extends React.Component {
   render() {
     return (
-      <div>
-        <div className="ui segment">
-            <div className="ui active loader"></div>
-  
-        </div>
+      <div style={{marginTop : "25px",marginBottom : "25px"}}>
+        <div className="ui active centered inline loader"></div>
       </div>
     );
   }

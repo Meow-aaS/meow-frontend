@@ -13,7 +13,7 @@ class Post extends React.Component {
     return (
 
       // {classname('ui', 'card', 'centered', styles['ui.card.centered'])}
-    <div>
+    <div style = {{marginTop : "25px"}}>
       <div className="ui card centered">
         <div className="content">
           <div className="right floated meta">14h</div>

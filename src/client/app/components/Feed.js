@@ -5,9 +5,9 @@ import ProgressBar from './ProgressBar.js';
 
 class Feed extends React.Component {
   constructor(props){
-    super(props); 
+    super(props);
      this.state = {
-       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
+       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn','test','test','test','test']}/>,
               <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
               <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>],
        isBottom : false,
@@ -57,15 +57,16 @@ class Feed extends React.Component {
 
                  });
         }.bind(this), delayMillis);
-       
+
      } else {
       console.log("not bottom");
-        
+
     }
   }
+  
   render() {
     return (
-      <div>
+      <div> 
           {this.state.post}
       </div>
 

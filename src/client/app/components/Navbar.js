@@ -9,12 +9,11 @@ class Navbar extends React.Component {
       <div>
       <div className="ui attached stackable menu">
   <div className="ui container">
-    <Link to="/"><a className="item">
+    <Link to="/" className="item">
       <i className="home icon"></i> Home
-    </a></Link>
-   <Link to="/browse"> <a className="item">
+    </Link>
+   <Link to="/browse" className="item"> 
       <i className="grid layout icon"></i> Browse
-    </a>
     </Link>
    
   </div>
