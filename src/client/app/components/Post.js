@@ -2,18 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import styles from '../assets/css/post.css'
 import '../assets/css/post.css';
+import Like from './Like.js'
 import classname from 'classnames';
 
 class Post extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isLike : false
-    };
-  }
+
   render() {
+
     return (
-      
+
       // {classname('ui', 'card', 'centered', styles['ui.card.centered'])}
       <div className="ui card centered">
         <div className="content">
@@ -25,10 +22,8 @@ class Post extends React.Component {
 
         </div>
         <div className="content">
-          <span className="right floated">
-            <i className="heart outline like icon"></i>
-            {this.props.like} likes
-           </span>
+          <Like like = {this.props.like} />
+          <div>{this.props.like}</div>
           <i className="comment icon"></i>
           {this.props.comment} comments
        </div>
