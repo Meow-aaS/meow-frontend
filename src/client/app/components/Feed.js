@@ -4,12 +4,12 @@ import Post from './Post.js';
 
 class Feed extends React.Component {
   constructor(props){
-    super(props); 
+    super(props);
      this.state = {
-       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
+       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn','test','test','test','test']}/>,
               <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
               <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>]
-     
+
     };
     this.handleScroll = this.handleScroll.bind(this);
 
@@ -37,12 +37,13 @@ class Feed extends React.Component {
                     post : cache
                  });
         }.bind(this), delayMillis);
-       
+
      } else {
       console.log("not bottom");
-        
+
     }
   }
+  
   render() {
     return (
       <div>
