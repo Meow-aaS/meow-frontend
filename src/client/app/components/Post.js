@@ -7,7 +7,7 @@ class Post extends React.Component {
   render() {
     return (
       
-      <div className="ui centered card" style={{width : '640 px ! important'}}>
+      <div className="ui centered card" style = {{width : "100 %"}}>
         <div className="content">
           <div className="right floated meta">14h</div>
            <img className="ui avatar image" src={"src/client/app/assets/images/elliot.jpg"}></img> Elliot
@@ -30,6 +30,7 @@ class Post extends React.Component {
             <input type="text" placeholder="Add Comment..."></input>
           </div>
         </div>
+      
       </div>
   
 
