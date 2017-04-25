@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom';
 class Post extends React.Component {
   render() {
     return (
-
-      <div className="ui card">
+      
+      <div className="ui centered card" style={{width : '640 px ! important'}}>
         <div className="content">
           <div className="right floated meta">14h</div>
            <img className="ui avatar image" src={"src/client/app/assets/images/elliot.jpg"}></img> Elliot
@@ -31,6 +31,7 @@ class Post extends React.Component {
           </div>
         </div>
       </div>
+  
 
     );
   }

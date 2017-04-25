@@ -5,15 +5,11 @@ import Post from './Post.js';
 class Feed extends React.Component {
   render() {
     return (
-      <div className = "ui center aligned grid">
-        <div>
-        <Post/>
-        </div>
-        <div>
-        <Post/>
-        </div>
+      <div>
+         <Post/>
+         <Post/>
+         <Post/>
       </div>
-
 
 
     );

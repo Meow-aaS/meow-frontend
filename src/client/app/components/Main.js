@@ -13,7 +13,7 @@ class Main extends React.Component {
       <div>
       
         <Navbar/>
-        <Route exact path = '/feed' component = {Feed} />
+        <Route exact path = '/' component = {Feed} />
 
       </div>
 
