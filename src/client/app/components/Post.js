@@ -4,9 +4,15 @@ import ReactDOM from 'react-dom';
 
 
 class Post extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isLike : false
+    };
+  }
   render() {
     return (
-      
+
       <div className="ui centered card" style = {{width : "100 %"}}>
         <div className="content">
           <div className="right floated meta">14h</div>
@@ -19,10 +25,10 @@ class Post extends React.Component {
         <div className="content">
           <span className="right floated">
             <i className="heart outline like icon"></i>
-            17 likes
+            {this.props.like} likes
            </span>
           <i className="comment icon"></i>
-          3 comments
+          {this.props.comment} comments
        </div>
         <div className="extra content">
           <div className="ui large transparent left icon input">
@@ -30,9 +36,9 @@ class Post extends React.Component {
             <input type="text" placeholder="Add Comment..."></input>
           </div>
         </div>
-      
+
       </div>
-  
+
 
     );
   }
