@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import styles from '../assets/css/post.css'
 import '../assets/css/post.css';
-import Like from './Like.js'
+import Like from './Like.js';
+import CommentList from './CommentList.js';
 import classname from 'classnames';
 
 class Post extends React.Component {
@@ -25,12 +26,15 @@ class Post extends React.Component {
         <div className="content">
           <Like like = {this.props.like} />
           <i className="comment icon"></i>
-          {this.props.comment} comments
+          {this.props.comment.length} comments
+          <CommentList comment = {this.props.comment} />
+
        </div>
         <div className="extra content">
           <div className="ui large transparent left icon input">
             <i className="heart outline icon"></i>
             <input type="text" placeholder="Add Comment..."></input>
+
           </div>
         </div>
 

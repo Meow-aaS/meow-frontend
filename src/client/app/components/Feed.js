@@ -6,9 +6,9 @@ class Feed extends React.Component {
   constructor(props){
     super(props); 
      this.state = {
-       post :[<Post like =  {2} comment = {3}/>,
-              <Post like =  {2} comment = {3}/>,
-              <Post like =  {2} comment = {3}/>]
+       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
+              <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
+              <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>]
      
     };
     this.handleScroll = this.handleScroll.bind(this);
@@ -32,7 +32,7 @@ class Feed extends React.Component {
        setTimeout(function() {
   //your code to be executed after 1 second
           cache.push(<Post like =  {5}
-                comment = {5}/>);
+                comment = {['the weeknd','bruno mars','damn']}/>);
                 this.setState({
                     post : cache
                  });
