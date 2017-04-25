@@ -2,20 +2,40 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Post from './Post.js';
 import ProgressBar from './ProgressBar.js';
+import CatFaceHelper from '../helpers/CatFaceHelper.js';
 
 class Feed extends React.Component {
   constructor(props){
     super(props);
      this.state = {
-       post :[<Post like =  {2} comment = {['the weeknd','bruno mars','damn','test','test','test','test']}/>,
-              <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
-              <Post like =  {2} comment = {['the weeknd','bruno mars','damn']}/>],
+       post :[<Post key = "1" like =  {2} comment = {['the weeknd','bruno mars','damn','test','test','test','test']}/>,
+              <Post key = "2" like =  {2} comment = {['the weeknd','bruno mars','damn']}/>,
+              <Post key = "3" like =  {2} comment = {['the weeknd','bruno mars','damn']}/>],
        isBottom : false,
        isProgressBar : false,
+       isFirstGet : false,
+       postObject : null,
+       postData : [],
      
     };
     this.handleScroll = this.handleScroll.bind(this);
 
+
+  }
+  componentWillMount(){
+
+    CatFaceHelper.getFeeds()
+                 .then(function(response){
+                    this.setState({
+                        postObject : response,
+                        postData : response.data 
+
+                    });
+
+                    
+
+                 }.bind(this));
+    
 
   }
   componentDidMount() {
@@ -65,9 +85,12 @@ class Feed extends React.Component {
   }
   
   render() {
+    console.log(this.state.postData);
     return (
       <div> 
-          {this.state.post}
+          {this.state.postData.map(data =>(
+              <Post key = {data.postID} like = {data.liked_count} comment = {data.comments} ownername = {data.owner_name} />
+          ))}
       </div>
 
 
