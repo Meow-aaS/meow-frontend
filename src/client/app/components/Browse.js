@@ -15,6 +15,7 @@ class Browse extends React.Component{
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleTextArea = this.handleTextArea.bind(this);
         this.handleFile = this.handleFile.bind(this);
 
     }
@@ -22,13 +23,23 @@ class Browse extends React.Component{
    handleChange(event) {
       this.setState({
           name: event.target.value,
-          caption : event.target.caption,
+          
     });
 
 
 
     console.log(this.state);
   }
+
+  handleTextArea(event){
+    this.setState({
+        caption : event.target.value,
+
+    });
+
+  }
+
+  
 
    handleFile(e) {
     const reader = new FileReader();
@@ -79,7 +90,7 @@ class Browse extends React.Component{
              </div>
                <div className="field">
                  <label>Caption</label>
-                 <textarea name = "caption" rows="2" id="name"></textarea>
+                 <textarea name = "caption" rows="2" id="name" onChange={this.handleTextArea}></textarea>
                </div>    
                <div className="field">
                    

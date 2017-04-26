@@ -60,7 +60,7 @@ var CatFaceHelper = {
     postComment:function(commentText,id){
         console.log(commentText);
         return axios.post('http://api.2meows.ml/post/comment?id='+id,{
-            comment : commentText
+            text : commentText
 
         }).then(function(response){
             return response.data
