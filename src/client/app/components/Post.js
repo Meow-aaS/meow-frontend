@@ -6,10 +6,42 @@ import Like from './Like.js';
 import Image from './Image.js'
 import CommentList from './CommentList.js';
 import classname from 'classnames';
+import CatFaceHelper from '../helpers/CatFaceHelper.js';
 
 class Post extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      postComment : "",
+      comments : [],
+    }
+    this.handleSubmit =  this.handleSubmit.bind(this);
+    this.handleComment = this.handleComment.bind(this);
+  }
+
+
+  handleSubmit(){
+    CatFaceHelper.postComment(this.state.postComment,this.props.id)
+              .then(function(data){
+                    // let temp  = this.state.comments;
+                    // this.temp.push(this.state.postComment)
+                    // this.setState({
+                    //     comments : temp,
+
+                    // })
+               });
+
+
+  }
+
+  handleComment(event){
+  
+    this.setState({
+      postComment : event.target.value,
+
+
+    })
+
 
 
   }
@@ -56,11 +88,17 @@ class Post extends React.Component {
 
        </div>
         <div className="extra content">
-          <div className="ui large transparent left icon input">
-            <i className="heart outline icon"></i>
-            <input type="text" placeholder="Add Comment..."></input>
+          <div className="ui large transparent left icon input" style={{width:"100%",marginRight : '15px'}}>
+            <i className="heart outline icon" onClick = {this.onClick}></i>
+            <input name = "comment" type="text" placeholder="Add Comment..." onChange = {this.handleComment}></input>
 
+            
+            < button className="ui primary button" onClick = {this.handleSubmit} >
+              Comment
+            </button>
           </div>
+        
+        
         </div>
 
       </div>

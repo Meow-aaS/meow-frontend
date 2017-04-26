@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import classname from 'classnames';
 import '../assets/css/like.css';
+import CatFaceHelper from '../helpers/CatFaceHelper.js'
 class Like extends React.Component {
   constructor(props) {
     super(props);
@@ -24,17 +25,23 @@ class Like extends React.Component {
         isLike : true,
         likes : this.state.likes + 1
       });
+
+      this.onLike().bind(this);
     }
 
   }
 
-  onLike(){
+  onLike(id){
+      CatFaceHelper.likePost(id).then(function(response){
+          
 
+
+      });
 
 
   }
 
-  
+
   render() {
   
     let classes = classname({'heart floated like icon':this.state.isLike,'heart outline like icon': !this.state.isLike});

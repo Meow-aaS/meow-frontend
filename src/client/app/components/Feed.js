@@ -135,7 +135,7 @@ class Feed extends React.Component {
       <div> 
           {this.state.postData.map(data =>(
               <Post key = {data.postID} like = {data.liked_count} comment = {data.comments} ownername = {data.owner_name} 
-              time={data.created_at} imageUrl = {data.image_url} caption ={data.caption}/>
+              time={data.created_at} imageUrl = {data.image_url} caption ={data.caption} id={data.postID}/>
           ))} 
           
           {(this.state.isProgressBar&&this.state.isBottom&& (this.state.nextPage!=0)) ? <ProgressBar/> : null }
