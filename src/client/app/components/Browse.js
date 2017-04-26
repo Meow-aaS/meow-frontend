@@ -63,6 +63,7 @@ class Browse extends React.Component{
 
 
         }
+        alert("posting..");
         CatFaceHelper.postImage(post)
             .then(function(){
 
