@@ -72,7 +72,7 @@ class Browse extends React.Component{
 
 
 
-         console.log(this.state);
+         console.log(this.post);
 
 
 

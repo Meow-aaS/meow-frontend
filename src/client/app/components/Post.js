@@ -13,7 +13,7 @@ class Post extends React.Component {
     super(props)
     this.state = {
       postComment : "",
-      comments : [],
+      comments : this.props.comment,
     }
     this.handleSubmit =  this.handleSubmit.bind(this);
     this.handleComment = this.handleComment.bind(this);
@@ -23,12 +23,12 @@ class Post extends React.Component {
   handleSubmit(){
     CatFaceHelper.postComment(this.state.postComment,this.props.id)
               .then(function(data){
-                    // let temp  = this.state.comments;
-                    // this.temp.push(this.state.postComment)
-                    // this.setState({
-                    //     comments : temp,
+                    let temp  = this.state.comments;
+                    this.temp.push(this.state.postComment)
+                    this.setState({
+                        comments : temp,
 
-                    // })
+                    })
                });
 
 
@@ -81,10 +81,10 @@ class Post extends React.Component {
         <div className="content">
           <Like like = {this.props.like} />
           <i className="comment icon"></i>
-          {this.props.comment.length} comments
+          {this.state.comments.length} comments
           <div><b>{this.props.caption}</b></div>
 
-          <CommentList comment = {this.props.comment} />
+          <CommentList comment = {this.state.comments} />
 
        </div>
         <div className="extra content">
