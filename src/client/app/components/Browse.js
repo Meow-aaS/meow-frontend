@@ -55,25 +55,17 @@ class Browse extends React.Component{
     reader.readAsDataURL(file);
   }
 
-  handleSubmit() {
-        var post = {
-            owner_name : this.state.name,
-            caption : this.state.caption,
-            file : this.state.file
+  handleSubmit(e) {
+      e.preventDefault()
+        // var post = {
+        //     owner_name : this.state.name,
+        //     caption : this.state.caption,
+        //     file : this.state.file
+        // }   
+        CatFaceHelper.postMockImage()
 
 
-        }
-        alert("posting..");
-        CatFaceHelper.postImage(post)
-            .then(function(){
-
-
-
-             });
-
-
-
-         console.log(this.post);
+         //console.log(this.post);
 
 
 

@@ -1,5 +1,61 @@
 import axios from 'axios';
 
+var postList = [
+    {
+        owner_name: "Saint",
+        image_url: "src/client/app/assets/images/1.png",
+        caption: "This is my cat.",
+        postID: 0,
+        liked_count: 6,
+        comments: ["So cute na.", "Woooo!!"],
+        createdAt: Date.now()
+    },
+    {
+        owner_name: "Best",
+        image_url: "src/client/app/assets/images/2.png",
+        caption: "She is so cuted.",
+        postID: 1,
+        liked_count: 4,
+        comments: ["<3"],
+        createdAt: Date.now()
+    },
+    {
+        owner_name: "Jeng",
+        image_url: "src/client/app/assets/images/3.png",
+        caption: "lolz xxx",
+        postID: 2,
+        liked_count: 16,
+        comments: ["I luv you"],
+        createdAt: Date.now()
+    },
+    {
+        owner_name: "Kim",
+        image_url: "src/client/app/assets/images/4.png",
+        caption: "Love me Love My Cats.",
+        postID: 3,
+        liked_count: 8,
+        comments: ["So good", "<3"],
+        createdAt: Date.now()
+    },
+    {
+        owner_name: "John",
+        image_url: "src/client/app/assets/images/5.png",
+        caption: "The fluffly cat.",
+        postID: 4,
+        liked_count: 11,
+        comments: [],
+        createdAt: Date.now()
+    },
+    {
+        owner_name: "Elizabeth",
+        image_url: "src/client/app/assets/images/6.png",
+        caption: "uvuvuevuevue onyatevuevue unyuttu osas.",
+        postID: 5,
+        liked_count: 20,
+        comments: [],
+        createdAt: Date.now()
+    },
+]
 // function getFeeds(){
 //     return axios.get("")
 //     .then(function (feed){
@@ -11,7 +67,9 @@ import axios from 'axios';
 // }
 
 var CatFaceHelper = {
-
+    getMockFeeds: function() {
+        return postList;
+    },
     getFeeds: function () {
         return axios.get("http://api.2meows.ml/post/list")
             .then(function (response) {
@@ -52,9 +110,17 @@ var CatFaceHelper = {
             .catch(function (error) {
                 console.log(error);
             });
-
-
-
+    },
+    postMockImage: function() {
+        postList.unshift({
+            owner_name: "User",
+            image_url: "src/client/app/assets/images/7.png",
+            caption: "It is what it is.",
+            postID: 6,
+            liked_count: 0,
+            comments: [],
+            createdAt: Date.now()
+        })
     },
 
     postComment:function(commentText,id){

@@ -33,6 +33,11 @@ var config = {
 
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: "file-loader?name=assets/mocks/[name].[ext]"
+
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader'
       }, {

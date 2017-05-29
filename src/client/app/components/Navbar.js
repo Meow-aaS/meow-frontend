@@ -13,7 +13,7 @@ class Navbar extends React.Component {
       <i className="home icon"></i> Home
     </Link>
    <Link to="/browse" className="item"> 
-      <i className="grid layout icon"></i> Browse
+      <i className="grid layout icon"></i> + New Post
     </Link>
    
   </div>

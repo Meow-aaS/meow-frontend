@@ -24,19 +24,21 @@ class Feed extends React.Component {
   }
   componentWillMount(){
 
-    CatFaceHelper.getFeeds()
-                 .then(function(response){
-                   console.log(response);
-                    this.setState({
+    this.setState({
+      postData: CatFaceHelper.getMockFeeds()
+    })
+                //  .then(function(response){
+                //    console.log(response);
+                //     this.setState({
                        
-                        postData : response.data,
-                        nextPage : response.nextPage,
+                //         postData : response.data,
+                //         nextPage : response.nextPage,
 
-                    });
+                //     });
 
                     
 
-                 }.bind(this));
+                //  }.bind(this));
     
 
   }
